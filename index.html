@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-database.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Delete Text It Messages - Private Link</title>
+    <link rel="icon" href="TextIt.jpg">
+</head>
+<body>
+    <button id="delete-Button">Delete Messages</button>
+</body>
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyAkE2faVw3DDhdO9am0wznBbbRuBes7twg",
+        authDomain: "textit-6d906.firebaseapp.com",
+        databaseURL: "https://textit-6d906-default-rtdb.firebaseio.com",
+        projectId: "textit-6d906",
+        storageBucket: "textit-6d906.appspot.com",
+        messagingSenderId: "492294323309",
+        appId: "1:492294323309:web:9d9512b307a522b2fdd364",
+        measurementId: "G-B8SHPNSH4Y"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    document.getElementById('delete-Button').addEventListener('click', function() {
+        firebase.database().ref("messages").remove();
+    })
+</script>
+</html>
